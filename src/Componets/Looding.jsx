@@ -2,8 +2,8 @@ import React from 'react'
 
 const Looding = () => {
   return (
-    <div>Looding</div>
+    <div>Looding</div>  
   )
 }
 
-export default Looding
+export default Looding 

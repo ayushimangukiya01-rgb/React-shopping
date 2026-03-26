@@ -1,9 +1,47 @@
-import React from 'react'
+import React, { useState } from "react";
+import Searchfilter from "../Componets/Searchfilter";
+import Categoryfilter from "../Componets/Categoryfiltter";
+import { useCart } from "../Context/Cardcontext";
+import Productcard from "../Componets/Productcard";
 
 const Productlist = () => {
-  return (
-    <div>Productlist</div>
-  )
-}
+  const { products } = useCart();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-export default Productlist
+  const filterProducts = products.filter((product) => {
+    const matchesSearch =
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchTerm.toLowerCase());
+
+    const matchesCategory =
+      selectedCategory === "All" || product.category === selectedCategory;
+
+    return matchesSearch && matchesCategory;
+  });
+
+  return (
+    <>
+      <div className="container mx-auto px-4 md:px-8 pt-8">
+        <Searchfilter searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <Categoryfilter
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
+
+        <h2 className="text-2xl font-extrabold mx-auto px-4 md:px-4 pt-4">
+          Featured Gear ({products.length} Items)
+        </h2>
+
+        <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-center items-center">
+          {filterProducts.map((product, index) => (
+            <Productcard key={index} product={product} />
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+
+
+export default Productlist;
