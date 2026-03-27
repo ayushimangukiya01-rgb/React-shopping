@@ -9,6 +9,7 @@ export const initialProducts = [
     description:
       "The ultimate smartphone experience with a 108MP camera and all-day battery life.",
     category: "Laptop",
+     stock: 5
   },
   // Realistic Image URLs for Laptop (Silver)
   {
@@ -19,6 +20,7 @@ export const initialProducts = [
     description:
       "Powerful and portable, featuring a 14-inch edge-to-edge display and latest CPU.",
     category: "Laptop",
+     stock: 5
   },
   // Realistic Image URLs for Tablet (with stylus)
   {
@@ -29,6 +31,7 @@ export const initialProducts = [
     description:
       "Vibrant 10-inch display for media consumption and light productivity tasks.",
     category: "Phone",
+     stock: 5
   },
   // Realistic Image URLs for Camera (Mirrorless)
   {
@@ -39,6 +42,7 @@ export const initialProducts = [
     description:
       "Capture stunning photos and 4K videos with professional-grade performance.",
     category: "Phone",
+     stock: 5
   },
   // Realistic Image URLs for Phone (Light/Older Model)
   {
@@ -49,6 +53,7 @@ export const initialProducts = [
     description:
       "An affordable, feature-packed phone with a secure biometric sensor.",
     category: "Phone",
+     stock: 5
   },
   // Realistic Image URLs for Laptop (Chromebook)
   {
@@ -59,6 +64,7 @@ export const initialProducts = [
   description:
     "The ultimate smartphone experience with a 108MP camera and all-day battery life.",
   category: "Laptop",
+   stock: 5
 },
   {
     id: 601,
@@ -68,6 +74,7 @@ export const initialProducts = [
     description:
       "Lightweight and fast, perfect for students and cloud-based work.",
     category: "Phone",
+     stock: 5
   },
     {
     id: 609,
@@ -77,6 +84,7 @@ export const initialProducts = [
     description:
       "Lightweight and fast, perfect for students and cloud-based work.",
     category: "Camera",
+     stock: 5
   },
   {
     id: 602,
@@ -86,6 +94,7 @@ export const initialProducts = [
     description:
       "Lightweight and fast, perfect for students and cloud-based work.",
     category: "Tablet",
+     stock: 5
   },
   {
     id: 603,
@@ -95,6 +104,7 @@ export const initialProducts = [
     description:
       "Lightweight and fast, perfect for students and cloud-based work.",
     category: "Tablet",
+     stock: 5
   },
   {
     id: 604,
@@ -104,6 +114,7 @@ export const initialProducts = [
     description:
       "Lightweight and fast, perfect for students and cloud-based work.",
     category: "Tablet",
+     stock: 5
   },
    {
     id: 610,
@@ -113,6 +124,7 @@ export const initialProducts = [
     description:
       "Lightweight and fast, perfect for students and cloud-based work.",
     category: "Camera",
+     stock: 5
   },
   {
     id: 605,
@@ -123,6 +135,7 @@ export const initialProducts = [
     description:
       "Lightweight and fast, perfect for students and cloud-based work.",
     category: "Tablet",
+     stock: 5
   },
   {
     id: 606,
@@ -132,6 +145,7 @@ export const initialProducts = [
     description:
       "Lightweight and fast, perfect for students and cloud-based work.",
     category: "Camera",
+     stock: 5
   },
   {
     id: 607,
@@ -141,6 +155,7 @@ export const initialProducts = [
     description:
       "Lightweight and fast, perfect for students and cloud-based work.",
     category: "Camera",
+     stock: 5
   },
     {
     id: 608,
@@ -150,6 +165,17 @@ export const initialProducts = [
     description:
       "The ultimate smartphone experience with a 108MP camera and all-day battery life.",
     category: "Laptop",
+     stock: 5
   }, 
+   {
+    id: 111,
+    name: "Canon E0S - 200",
+    price: 60990,
+    image: "https://m.media-amazon.com/images/I/81LskAU5h1L._SX679_.jpg",
+    description:
+      "Lightweight and fast, perfect for students and cloud-based work.",
+    category: "Camera",
+     stock: 5
+  },
 
 ];

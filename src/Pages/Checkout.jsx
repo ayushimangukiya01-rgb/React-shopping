@@ -11,7 +11,14 @@ const Checkout = () => {
     city: "",
     zip: "",
   });
+const subtotal = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0,
+  );
 
+  const gst = subtotal * 0.18;
+
+  const total = subtotal + gst;
   const [isConfirmed, setIsConfirmed] = useState(false);
 
   const handleChange = (e) => {
@@ -103,6 +110,14 @@ const Checkout = () => {
                     ₹{cartTotal.toFixed(2)}
                   </span>
                 </div>
+
+                 <div className="flex justify-between text-xl">
+                  <span>GST :</span>
+                  <span className="font-semibold text-white">
+                    ₹{gst.toFixed(2)}
+                  </span>
+                </div>
+                
                 <div className="flex justify-between text-xl">
                   <span>Shipping (Express):</span>
                   <span className="font-semibold text-green-400">Free</span>
@@ -112,7 +127,7 @@ const Checkout = () => {
                      Total Due:
                   </span>
                   <span className="text-3xl font-extrabold text-orange-400">
-                    ₹{cartTotal.toFixed(2)}
+                    ₹{total.toFixed(2)}
                   </span>
                 </div>
               </div>

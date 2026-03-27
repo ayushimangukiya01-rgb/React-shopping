@@ -3,10 +3,9 @@ import { Tag } from "lucide-react";
 import { initialProducts } from "../Data/Product";
 
 const availableCategories = [
-  "all",
+  "All",
   ...new Set(initialProducts.map((p) => p.category)),
 ];
-
 
 const Categoryfilter = ({selectedCategory, setSelectedCategory}) => {
   

@@ -1,11 +1,18 @@
 import React from "react";
 import { useCart } from "../Context/Cardcontext";
 import { X } from "lucide-react";
+import { toast } from "react-toastify";
 
 const Cartitem = ({ item }) => {
   const { addToCart, removeFromCart } = useCart();
 
-  const increaseQ = () => addToCart(item);
+  const increaseQ = () => {
+  if (item.quantity >= item.stock) {
+    toast.error("Out of Stock ❌");
+    return;
+  }
+  addToCart(item);        
+};
   const decreaseQ = () => removeFromCart(item.id);
 
   return (
@@ -57,6 +64,7 @@ const Cartitem = ({ item }) => {
           </span>
 
           <button
+          // disabled={item.quantity >= item.stock}
             onClick={increaseQ}
             className="flex items-center justify-center w-10 h-10 text-lg font-bold 
             text-gray-300 hover:bg-green-500/20 hover:text-green-400 transition active:scale-90"
@@ -68,7 +76,7 @@ const Cartitem = ({ item }) => {
         {/* TOTAL PRICE */}
         <p className="font-extrabold text-orange-300 w-24 text-right hidden md:block">
           ₹{(item.price * item.quantity).toFixed(2)}
-        </p>
+        </p>   
 
         {/* REMOVE BUTTON */}
         <button
@@ -78,8 +86,9 @@ const Cartitem = ({ item }) => {
         >
           <X className="w-5 h-5" />
         </button>
-      </div>
+      </div>    
     </div>
+    
   );
 };
 
